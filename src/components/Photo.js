@@ -6,7 +6,7 @@ const Photo = ({ id }) => {
     <Card className="photo">
       <Card.Img
         variant="top"
-        src={`http://localhost:3300/photos/${id}`}
+        src={`https://image-gallery-app1111.herokuapp.com/photos/${id}`}
         alt="Photo"
       />
     </Card>
