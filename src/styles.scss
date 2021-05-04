@@ -1,27 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 html {
     font-size: 62.5%;
 }
 
 body {
-    background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-    font-family: Noto Sans, Helvetica, sans-serif;
-    color: #666;
+    background: linear-gradient(to bottom right, #a4b8db, #e2a199);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 1px;
     min-height: 100vh;
     font-size: 1.6rem;
+    transition: all 0.5s ease;
 }
 
 
 /* ----- header css starts here ----- */
 
+.navigation {
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px grey;
+}
+
+.navigation .logo h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-left: 80%;
+    font-family: 'Ranchers';
+    letter-spacing: 2px;
+    display: block;
+    font-weight: 500;
+    margin-top: 0rem;
+}
+
+.navigation .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #21597e;
+    outline: none;
+    border: none;
+    margin-right: 10%;
+    transition: 0.3s;
+}
+
+.navigation .icon:hover {
+    background-color: #fff;
+    color: #21597e;
+}
+
 header {
     text-align: center;
-    margin: 2rem 0 1rem 0;
+    margin: 0rem 0 1rem 0;
     .links {
         text-transform: uppercase;
         text-align: center;
-        font-size: 150%;
+        font-size: 120%;
         margin-top: 4rem;
+        font-weight: 500;
         .link:link,
         .link:visited {
             padding: 0.5rem 1rem;
@@ -34,20 +73,23 @@ header {
         }
         .link:hover,
         .link:active {
-            border-bottom: 2px solid #fff;
+            color: #21597e;
+            border-bottom: 2px solid #21597e;
         }
     }
 }
 
 h1 {
-    text-shadow: 0 0 2rem #fefcc9, 1rem -1rem 3rem #feec85, -2rem -2rem 4rem #ffae34, 2rem -4rem 5rem #ec760c, -2rem -6rem 6rem #cd4606, 0 -8rem 6rem #973716, 1rem -9rem 8rem #451b0e;
+    text-shadow: 0.5rem 0.7rem 1rem grey;
     display: inline-block;
-    font-size: 200%;
+    font-size: 160%;
+    font-weight: 600;
+    margin-top: 2rem;
 }
 
 h1,
 h2 {
-    color: #666;
+    color: #275a6a;
 }
 
 
@@ -57,7 +99,7 @@ h2 {
 /* ----- main content css starts here ----- */
 
 .home-page {
-    margin-top: 2rem;
+    margin-top: 2.3rem;
 }
 
 .upload-form {
@@ -65,9 +107,61 @@ h2 {
     margin: auto;
     margin-top: 2rem;
     padding: 2rem;
-    border: 1px solid #000;
-    padding-left: 20%;
-    background: #eee;
+    box-shadow: 2px 2px 2px 2px grey;
+    padding: 2rem;
+    background: aliceblue;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.upload-form #file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+.upload-form .file-input {
+    position: relative;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid grey;
+}
+
+.upload-form .input-label {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(40deg, #ff6ec4, #7873f5);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10%;
+}
+
+.input-label i {
+    font-size: 2rem;
+}
+
+.upload-form .filename {
+    width: 40%;
+    height: 60px;
+    padding: 5px;
+    margin-left: 25px;
+    margin-top: 10px;
+    color: grey;
+    // border: 1px solid grey;
+    overflow: hidden;
 }
 
 .main-content {
@@ -103,11 +197,14 @@ h2 {
 
 button {
     margin-right: 0.5rem;
+    border-radius: 10px;
 }
 
 .submit-btn {
     margin-top: 2rem;
-    font-size: 1.6rem;
+    font-size: 2rem !important;
+    padding: 0.5rem 2rem;
+    background-color: #275a6a !important;
 }
 
 .disabled {
@@ -159,12 +256,16 @@ button {
     }
 }
 
-@media only screen and (max-width: 620px) {
-    body {
-        font-size: 1.3rem;
+@media only screen and (max-width: 650px) {
+    .navigation .logo h1 {
+        margin-left: 30%;
     }
     .main-content {
         width: 100%;
+    }
+    .upload-form {
+        width: 80%;
+        padding: 1.5rem;
     }
     .photos-list {
         .photo {

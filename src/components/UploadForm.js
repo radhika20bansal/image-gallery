@@ -20,6 +20,8 @@ const UploadForm = ({ errors, dispatch }) => {
   const handleOnChange = (event) => {
     const file = event.target.files[0];
     setPhoto(file);
+    const {name: fileName} = file;
+    document.querySelector('.filename').textContent = fileName;
   };
 
   const handleFormSubmit = (event) => {
@@ -49,10 +51,13 @@ const UploadForm = ({ errors, dispatch }) => {
         className="upload-form">
         <Form.Group>
           <Form.Label>Choose photo to upload</Form.Label>
-          <Form.Control type="file" name="photo" onChange={handleOnChange} />
+          <Form.Control type="file" name="photo" onChange={handleOnChange} id="file"/>
         </Form.Group>
+        <div className="file-input">
+        <Form.Label for="file" className="input-label"><i class="fa fa-plus" aria-hidden="true"></i></Form.Label>
+        <p className="filename">Choose your file</p>
+        </div>
         <Button
-          variant="primary"
           type="submit"
           className={`${!photo ? 'disabled submit-btn' : 'submit-btn'}`}
           disabled={photo ? false : true}>
